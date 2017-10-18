@@ -1,2 +1,4 @@
-# three-in-a-row
+# Three in a row
+
 Android Studio Final Project at Homesglen TAFE
+
