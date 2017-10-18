@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/activity_padding"
+    tools:context="com.example.andress.androidgame.MainActivity">
+
+    <com.example.andress.androidgame.ui.kenvector.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_blue_rounded_upside"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/textLight"
+        android:text="@string/activity_main_panel_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded_downside">
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/mainActivityBtnFindMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_yellow"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_extra_big"
+            android:text="@string/activity_main_btn_find_match"
+            android:onClick="goToMatchSettings"/>
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/mainActivityBtnStandings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_blue"
+            android:layout_below="@id/mainActivityBtnFindMatch"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/activity_main_btn_standings"
+            android:onClick="goToStandings"/>
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/mainActivityBtnHowToPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_blue"
+            android:layout_below="@+id/mainActivityBtnStandings"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/activity_main_btn_how_to_play" />
+    </RelativeLayout>
+</LinearLayout>

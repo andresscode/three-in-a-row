@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">AndroidGame</string>
+
+    <!--Main Activity-->
+    <string name="activity_main_panel_title">Menu</string>
+    <string name="activity_main_btn_find_match">Find Match</string>
+    <string name="activity_main_btn_standings">Standings</string>
+    <string name="activity_main_btn_how_to_play">How to play</string>
+
+    <!--Create User Activity-->
+    <string name="activity_create_user_panel_title">Create user</string>
+    <string name="activity_create_user_toast_message">Please insert Username</string>
+
+    <!--Match Settings Activity-->
+    <string name="activity_match_settings_panel_title">Match Settings</string>
+    <string name="activity_match_settings_text_view_difficulty">Difficulty</string>
+    <string name="activity_match_settings_text_view_pokemon">Pokemon</string>
+
+    <!--Finding Match Activity-->
+    <string name="activity_finding_match_text_view_finding">Finding match</string>
+    <string name="activity_finding_match_text_view_found">Match found</string>
+
+    <!--GameSessionsAcitivites-->
+    <string name="activity_game_session_text_view_hud_action_play">Play</string>
+    <string name="activity_game_session_text_view_hud_action_wait">Wait</string>
+    <string name="activity_game_session_toast_wait_your_turn">Wait your turn</string>
+
+    <!--Standings Activity-->
+    <string name="activity_standings_panel_title">Standings</string>
+    <string name="activity_standings_table_column_win_header">W</string>
+    <string name="activity_standings_table_column_lose_header">L</string>
+    <string name="activity_standings_table_column_tie_header">T</string>
+    <string name="activity_standings_table_column_fastest_header">Best Time</string>
+    <string name="activity_standings_table_column_fastest_seconds_indicator">sec</string>
+
+    <!--Game Results-->
+    <string name="game_result_win">Win</string>
+    <string name="game_result_lose">Lose</string>
+    <string name="game_result_tie">Tie</string>
+    <string name="game_result_error">Error</string>
+
+    <!--Buttons-->
+    <string name="button_accept">Accept</string>
+</resources>

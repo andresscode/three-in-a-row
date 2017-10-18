@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/activity_padding"
+    tools:context="com.example.andress.androidgame.StandingsActivity">
+
+    <com.example.andress.androidgame.ui.kenvector.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_standings_panel_title"
+        android:background="@drawable/panel_blue_rounded_upside"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/textLight"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded_downside">
+
+        <TableLayout
+            android:id="@+id/standingsActivityTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <TableRow android:layout_marginBottom="@dimen/margin_regular">
+                <!--First header must be empty-->
+                <com.example.andress.androidgame.ui.kenvector.TextView />
+
+                <com.example.andress.androidgame.ui.kenvector.TextView
+                    android:text="@string/activity_standings_table_column_win_header"
+                    android:layout_gravity="center_horizontal"/>
+
+                <com.example.andress.androidgame.ui.kenvector.TextView
+                    android:text="@string/activity_standings_table_column_lose_header"
+                    android:layout_gravity="center_horizontal"/>
+
+                <com.example.andress.androidgame.ui.kenvector.TextView
+                    android:text="@string/activity_standings_table_column_tie_header"
+                    android:layout_gravity="center_horizontal"/>
+
+                <com.example.andress.androidgame.ui.kenvector.TextView
+                    android:text="@string/activity_standings_table_column_fastest_header"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</LinearLayout>

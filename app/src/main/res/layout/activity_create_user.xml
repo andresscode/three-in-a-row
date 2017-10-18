@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/activity_padding"
+    tools:context="com.example.andress.androidgame.CreateUserActivity">
+
+    <com.example.andress.androidgame.ui.kenvector.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_create_user_panel_title"
+        android:background="@drawable/panel_blue_rounded_upside"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/textLight" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded_downside">
+
+        <com.example.andress.androidgame.ui.kenvector.EditText
+            android:id="@+id/createUserActivityEditTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/panel_white_rounded"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:textAlignment="center"
+            android:textColor="@color/textDark"
+            android:maxLength="@integer/username_max_length"
+            android:maxLines="@integer/edit_text_max_lines"
+            android:inputType="textPersonName" />
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/createUserActivityBtnAccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_green"
+            android:text="@string/button_accept"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_below="@+id/createUserActivityEditTextUsername"
+            android:onClick="setUsername" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/panel_grey_rounded_tile" />
+    <item>
+        <shape android:shape="rectangle">
+            <padding
+                android:top="@dimen/tile_padding"
+                android:right="@dimen/tile_padding"
+                android:bottom="@dimen/tile_padding"
+                android:left="@dimen/tile_padding"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/pokeball" android:alpha="0.7" />
+    </item>
+</layer-list>

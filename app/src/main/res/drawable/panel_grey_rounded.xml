@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/panelGreyDark" />
+            <corners android:radius="@dimen/panel_border_outer_radius" />
+            <padding
+                android:top="@dimen/panel_border_outer_padding"
+                android:right="@dimen/panel_border_outer_padding"
+                android:bottom="@dimen/panel_border_outer_padding"
+                android:left="@dimen/panel_border_outer_padding" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/panelGreyLight" />
+            <corners android:radius="@dimen/panel_border_mid_radius" />
+            <padding
+                android:top="@dimen/panel_border_mid_padding"
+                android:right="@dimen/panel_border_mid_padding"
+                android:bottom="@dimen/panel_border_mid_padding"
+                android:left="@dimen/panel_border_mid_padding" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/panelGreyMain" />
+            <corners android:radius="@dimen/panel_border_inner_radius" />
+            <padding
+                android:top="@dimen/panel_border_inner_padding_small"
+                android:right="@dimen/panel_border_inner_padding_small"
+                android:bottom="@dimen/panel_border_inner_padding_small"
+                android:left="@dimen/panel_border_inner_padding_small" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/activity_padding"
+    tools:context="com.example.andress.androidgame.MatchSettingsActivity">
+
+    <com.example.andress.androidgame.ui.kenvector.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_match_settings_panel_title"
+        android:background="@drawable/panel_blue_rounded_upside"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/textLight"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded_downside">
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/matchSettingsActivityTextViewDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_match_settings_text_view_difficulty"
+            android:textColor="@color/textDark"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:textSize="@dimen/text_size_small"/>
+
+        <RadioGroup
+            android:id="@+id/matchSettingsActivityRadioGroupDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_below="@+id/matchSettingsActivityTextViewDifficulty">
+
+            <RadioButton
+                android:id="@+id/matchSettingsActivityDifficultyEasy"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_easy"
+                android:button="@android:color/transparent" />
+
+            <RadioButton
+                android:id="@+id/matchSettingsActivityDifficultyNormal"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_normal"
+                android:button="@android:color/transparent"/>
+
+            <RadioButton
+                android:id="@+id/matchSettingsActivityDifficultyHard"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_hard"
+                android:button="@android:color/transparent"/>
+        </RadioGroup>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/matchSettingsActivityTextViewPokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_match_settings_text_view_pokemon"
+            android:textColor="@color/textDark"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_below="@+id/matchSettingsActivityRadioGroupDifficulty"/>
+
+        <HorizontalScrollView
+            android:id="@+id/matchSettingsActivityHorizontalScrollViewPokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_below="@+id/matchSettingsActivityTextViewPokemon">
+
+            <RadioGroup
+                android:id="@+id/matchSettingsActivityRadioGroupPokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonPikachu"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_pikachu"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonBullbasaur"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_bullbasaur"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonCharmander"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_charmander"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonSquirtle"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_squirtle"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonMeowth"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_meowth"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonEevee"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_eevee"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonPsyduck"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_psyduck"/>
+
+                <RadioButton
+                    android:id="@+id/matchSettingsActivityPokemonSnorlax"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_pokemon_snorlax"/>
+            </RadioGroup>
+        </HorizontalScrollView>
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/matchSettingsActivityButtonAccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_accept"
+            android:background="@drawable/button_green"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_regular"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_below="@+id/matchSettingsActivityHorizontalScrollViewPokemon"
+            android:onClick="goToFindingMatch"/>
+    </RelativeLayout>
+</LinearLayout>

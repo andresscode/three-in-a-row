@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1ea7e1</color>
+    <color name="colorPrimaryDark">#1989B8</color>
+    <color name="colorAccent">#ffcc01</color>
+
+    <!--Activity background-->
+    <color name="activityBackground">#ffcc00</color>
+
+    <!--Panels-->
+    <color name="panelBlueMain">#1ea7e1</color>
+    <color name="panelBlueLight">#45BCEF</color>
+    <color name="panelBlueDark">#1989b8</color>
+    <color name="panelGreyMain">#EEEEEE</color>
+    <color name="panelGreyLight">#F9F9F9</color>
+    <color name="panelGreyDark">#A4A5A9</color>
+
+    <!--Buttons-->
+    <color name="buttonBlueStartGradient">#45BCEF</color>
+    <color name="buttonBlueEndGradient">#1EA7E1</color>
+    <color name="buttonYellowStartGradient">#FFD948</color>
+    <color name="buttonYellowEndGradient">#FFCC00</color>
+    <color name="buttonYellowDark">#A78400</color>
+    <color name="buttonGreenStartGradient">#88e060</color>
+    <color name="buttonGreenEndGradient">#73CD4B</color>
+    <color name="buttonGreenDark">#3A7B1D</color>
+    <color name="buttonRedStartGradient">#FA8132</color>
+    <color name="buttonRedEndGradient">#E86A17</color>
+    <color name="buttonRedDark">#A54100</color>
+
+    <!--Text-->
+    <color name="textLight">@android:color/primary_text_dark_nodisable</color>
+    <color name="textDark">#80000000</color>
+    <color name="textDarkSoft">#40000000</color>
+</resources>

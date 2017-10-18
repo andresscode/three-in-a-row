@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Activity-->
+    <dimen name="activity_padding">20dp</dimen>
+    <dimen name="activity_padding_in_game">10dp</dimen>
+    <!--Panel-->
+    <dimen name="panel_border_outer_radius">5dp</dimen>
+    <dimen name="panel_border_outer_padding">2dp</dimen>
+    <dimen name="panel_border_mid_radius">2dp</dimen>
+    <dimen name="panel_border_mid_padding">3dp</dimen>
+    <dimen name="panel_border_inner_radius">3dp</dimen>
+    <dimen name="panel_border_inner_padding">15dp</dimen>
+    <dimen name="panel_border_inner_padding_small">10dp</dimen>
+    <dimen name="panel_border_inner_padding_small_extra">5dp</dimen>
+    <!--Button-->
+    <dimen name="button_border_outer_padding_bottom">6dp</dimen>
+    <dimen name="button_border_inner_padding">15dp</dimen>
+    <!--Text Size-->
+    <dimen name="text_size_extra_extra_big">30dp</dimen>
+    <dimen name="text_size_extra_big">26dp</dimen>
+    <dimen name="text_size_big">20dp</dimen>
+    <dimen name="text_size_regular">18dp</dimen>
+    <dimen name="text_size_small">16dp</dimen>
+    <!--Margins-->
+    <dimen name="margin_regular">10dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <!--Radio Buttons-->
+    <dimen name="radio_default_size">64dp</dimen>
+    <!--Stopwatch-->
+    <dimen name="stopwatch_padding_top_adjustment">9dp</dimen>
+    <dimen name="stopwatch_padding_left_adjustment">4dp</dimen>
+    <!--GridView-->
+    <dimen name="grid_view_tile_big">64dp</dimen>
+    <dimen name="grid_view_tile_normal">48dp</dimen>
+    <dimen name="grid_view_tile_small">36dp</dimen>
+    <!--Tile-->
+    <dimen name="tile_padding">25dp</dimen>
+</resources>
