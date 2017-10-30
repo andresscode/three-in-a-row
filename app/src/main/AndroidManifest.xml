@@ -9,19 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateUserActivity" />
-        <activity android:name=".StandingsActivity" />
-        <activity android:name=".MatchSettingsActivity" />
-        <activity android:name=".FindingMatchActivity" />
-        <activity android:name=".GameSessionActivity" />
-
+        <activity
+            android:name=".CreateUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StandingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MatchSettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FindingMatchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GameSessionActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".HowToPlayActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

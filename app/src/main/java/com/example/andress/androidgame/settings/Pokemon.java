@@ -7,11 +7,14 @@ import com.example.andress.androidgame.R;
  *
  * This enum class holds the data for the Pokemons:
  *
- *  - id: identifier for each Pokemon (int).
+ *  - str: string name.
+ *  - id: identifier for each Pokemon in the radio group of the layout.
  *  - png: the drawable resource of the original png file.
  *  - radio: the drawable resource for the radio buttons.
  *  - tileGreen: the drawable resource for the user tiles on game (Green background).
+ *  - tileGreenHud: the drawable resource for the user tiles on the HUD (Green background).
  *  - tileRed: the drawable resource for the opponent's tiles on game (Red background).
+ *  - tileRedHud: the drawable resource for the opponent's tiles on the HUD (Red background).
  */
 
 public enum Pokemon {

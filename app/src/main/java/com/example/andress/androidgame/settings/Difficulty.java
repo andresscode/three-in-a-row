@@ -1,7 +1,5 @@
 package com.example.andress.androidgame.settings;
 
-import android.util.Log;
-
 import com.example.andress.androidgame.R;
 
 /**
@@ -9,7 +7,8 @@ import com.example.andress.androidgame.R;
  *
  * This enum holds the information about the difficulties:
  *
- *  - id: identifies the difficulty.
+ *  - str: string name.
+ *  - id: identifies the difficulty radio button in the layout.
  *  - rows: number of rows.
  *  - cols: number of columns.
  *  - time: time for the game.

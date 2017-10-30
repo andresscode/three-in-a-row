@@ -35,4 +35,7 @@
     <dimen name="grid_view_tile_small">36dp</dimen>
     <!--Tile-->
     <dimen name="tile_padding">25dp</dimen>
+    <!--Dialogue-->
+    <dimen name="dialogue_arrow_size">16dp</dimen>
+    <dimen name="dialogue_arrow_margin_top">32dp</dimen>
 </resources>

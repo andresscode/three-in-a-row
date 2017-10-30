@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/activity_padding"
+    tools:context="com.example.andress.androidgame.HowToPlayActivity">
+
+    <com.example.andress.androidgame.ui.kenvector.TextView
+        android:id="@+id/howToPlayActivitySettingsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_match_settings_panel_title"
+        android:background="@drawable/panel_blue_rounded_upside"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/textLight"/>
+
+    <RelativeLayout
+        android:id="@+id/howToPlayActivitySettingsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded_downside"
+        android:layout_marginBottom="@dimen/margin_regular">
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityTextViewDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/activity_match_settings_text_view_difficulty"
+            android:textAlignment="center"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_small" />
+
+        <ImageView
+            android:id="@+id/howToPlayActivityDifficultyPointer"
+            android:layout_width="@dimen/grid_view_tile_normal"
+            android:layout_height="@dimen/grid_view_tile_normal"
+            android:src="@drawable/hand_pointer"
+            android:layout_below="@id/howToPlayActivityTextViewDifficulty"
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="10dp" />
+
+        <RadioGroup
+            android:id="@+id/howToPlayActivityRadioGroupDifficulty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/howToPlayActivityTextViewDifficulty"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/howToPlayActivityDifficultyEasy"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_easy"
+                android:button="@android:color/transparent"
+                android:enabled="false" />
+
+            <RadioButton
+                android:id="@+id/howToPlayActivityDifficultyNormal"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_normal"
+                android:button="@android:color/transparent"
+                android:enabled="false" />
+
+            <RadioButton
+                android:id="@+id/howToPlayActivityDifficultyHard"
+                android:layout_width="@dimen/radio_default_size"
+                android:layout_height="@dimen/radio_default_size"
+                android:background="@drawable/radio_difficulty_hard"
+                android:button="@android:color/transparent"
+                android:enabled="false" />
+        </RadioGroup>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityTextViewPokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/howToPlayActivityRadioGroupDifficulty"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/activity_match_settings_text_view_pokemon"
+            android:textAlignment="center"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_small" />
+
+            <RadioGroup
+                android:id="@+id/howToPlayActivityRadioGroupPokemon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/howToPlayActivityTextViewPokemon"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonPikachu"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_pikachu"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonBullbasaur"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_bullbasaur"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonCharmander"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_charmander"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonSquirtle"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_squirtle"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonMeowth"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_meowth"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+
+                <RadioButton
+                    android:id="@+id/howToPlayActivityPokemonEevee"
+                    android:layout_width="@dimen/radio_default_size"
+                    android:layout_height="@dimen/radio_default_size"
+                    android:background="@drawable/radio_pokemon_eevee"
+                    android:button="@android:color/transparent"
+                    android:enabled="false" />
+            </RadioGroup>
+
+        <ImageView
+            android:id="@+id/howToPlayActivityPokemonPointer"
+            android:layout_width="@dimen/grid_view_tile_normal"
+            android:layout_height="@dimen/grid_view_tile_normal"
+            android:src="@drawable/hand_pointer"
+            android:layout_above="@id/howToPlayActivityRadioGroupPokemon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <com.example.andress.androidgame.ui.kenvector.Button
+            android:id="@+id/howToPlayActivityButtonAccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/howToPlayActivityRadioGroupPokemon"
+            android:layout_marginBottom="@dimen/margin_regular"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:background="@drawable/button_green"
+            android:enabled="false"
+            android:text="@string/button_accept"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/text_size_regular" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/howToPlayActivityHudBarTop"
+        android:background="@drawable/panel_grey_rounded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityHudTileTop"
+            android:layout_width="@dimen/radio_default_size"
+            android:layout_height="@dimen/radio_default_size"
+            android:background="@drawable/tile_green_pikachu_hud"/>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityHudUsernameTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_big"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="You"/>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityHudActionTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/textDarkSoft"
+            android:layout_alignBottom="@+id/howToPlayActivityHudTimerTop"
+            android:layout_centerHorizontal="true"
+            android:text="@string/activity_game_session_text_view_hud_action_wait"/>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityHudTimerTop"
+            android:layout_width="@dimen/radio_default_size"
+            android:layout_height="@dimen/radio_default_size"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/stopwatch"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_regular"
+            android:paddingTop="@dimen/stopwatch_padding_top_adjustment"
+            android:paddingLeft="@dimen/stopwatch_padding_left_adjustment"
+            android:text="60"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/howToPlayActivityGridViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_regular"
+        android:layout_marginBottom="@dimen/margin_regular"
+        android:background="@drawable/panel_grey_rounded" >
+
+        <GridView
+            android:id="@+id/howToPlayActivityGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="@dimen/margin_regular"
+            android:horizontalSpacing="@dimen/margin_regular"
+            android:stretchMode="columnWidth"
+            android:gravity="center"
+            android:numColumns="4">
+
+        </GridView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/howToPlayActivityDialogueBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_grey_rounded" >
+
+        <ImageView
+            android:id="@+id/howToPlayActivityPlayerImage"
+            android:layout_width="@dimen/grid_view_tile_normal"
+            android:layout_height="@dimen/grid_view_tile_normal"
+            android:src="@drawable/help_player"
+            android:layout_marginRight="@dimen/margin_regular"/>
+
+        <com.example.andress.androidgame.ui.kenvector.TextView
+            android:id="@+id/howToPlayActivityTextViewDialogue"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/grid_view_tile_normal"
+            android:layout_toRightOf="@id/howToPlayActivityPlayerImage"
+            android:text="@string/activity_how_to_play_message_00_welcome" />
+
+        <ImageView
+            android:id="@+id/howToPlayActivityImageViewDialogueArrow"
+            android:layout_width="@dimen/dialogue_arrow_size"
+            android:layout_height="@dimen/dialogue_arrow_size"
+            android:src="@drawable/arrow_down_dialogue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dialogue_arrow_margin_top"/>
+    </RelativeLayout>
+</LinearLayout>

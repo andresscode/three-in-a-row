@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 
 /**
  * Created by Andress on 26/9/17.
+ *
+ * Custom EditText with the Kenvector Future font.
  */
 
 public class EditText extends AppCompatEditText {

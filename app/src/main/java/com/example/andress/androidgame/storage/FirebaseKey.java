@@ -2,6 +2,8 @@ package com.example.andress.androidgame.storage;
 
 /**
  * Created by Andress on 28/9/17.
+ *
+ * This enum holds the child strings used in the Firebase database.
  */
 
 public enum FirebaseKey {

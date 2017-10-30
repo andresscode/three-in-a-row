@@ -11,6 +11,22 @@
     <string name="activity_create_user_panel_title">Create user</string>
     <string name="activity_create_user_toast_message">Please insert Username</string>
 
+    <!--How to Play Activity-->
+    <string name="activity_how_to_play_message_00_welcome">Welcome, %1$s! \nI\'m your master, let me show you how to play...</string>
+    <string name="activity_how_to_play_message_01_match_settings">This is the match settings menu, here you select two things...</string>
+    <string name="activity_how_to_play_message_02_difficulty">First, which difficulty you want to play... Easy, Normal or Hard...</string>
+    <string name="activity_how_to_play_message_03_pokemon">Second, which Pokemon you want to use... You have eight available...</string>
+    <string name="activity_how_to_play_message_04_match_settings_ready">Now... Let\'s play...</string>
+    <string name="activity_how_to_play_message_05_game_session_01">This is the board, four tiles will be placed randomly...</string>
+    <string name="activity_how_to_play_message_05_game_session_02">You\'ll play with the green tiles and the Pokemon you selected...</string>
+    <string name="activity_how_to_play_message_05_game_session_03">The HUD over the top will tell you when is your turn to play...</string>
+    <string name="activity_how_to_play_message_05_game_session_04">Try to play quick, if the timer expires you will lose...</string>
+    <string name="activity_how_to_play_message_05_game_session_05">The goal is forcing your opponent to place three tiles in a row...</string>
+    <string name="activity_how_to_play_message_05_game_session_06">Vertically... Like my Bullbasaurs...</string>
+    <string name="activity_how_to_play_message_05_game_session_07">Or horizontally... Like your Pikachus...</string>
+    <string name="activity_how_to_play_message_05_game_session_08">The player with three tiles in a row loses...</string>
+    <string name="activity_how_to_play_message_05_game_session_09">Now you\'re ready to be a Pokemon Master! \nGood Luck!</string>
+
     <!--Match Settings Activity-->
     <string name="activity_match_settings_panel_title">Match Settings</string>
     <string name="activity_match_settings_text_view_difficulty">Difficulty</string>
@@ -20,7 +36,7 @@
     <string name="activity_finding_match_text_view_finding">Finding match</string>
     <string name="activity_finding_match_text_view_found">Match found</string>
 
-    <!--GameSessionsAcitivites-->
+    <!--GameSessionsActivities-->
     <string name="activity_game_session_text_view_hud_action_play">Play</string>
     <string name="activity_game_session_text_view_hud_action_wait">Wait</string>
     <string name="activity_game_session_toast_wait_your_turn">Wait your turn</string>

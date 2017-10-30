@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 /**
  * Created by Andress on 29/9/17.
+ *
+ * Setups the grid view in the game session.
  */
 public class ImageAdapter extends BaseAdapter {
     private Context context;

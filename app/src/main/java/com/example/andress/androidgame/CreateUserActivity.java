@@ -15,7 +15,7 @@ import com.example.andress.androidgame.storage.SharedPreferencesKey;
  * This activity creates the username into the SharedPreferences of the device to be used
  * for the game. This activity just will be launched when the game is started for first time.
  * The username cannot be changed after that. The username is used to identify visually each
- * player during a game.
+ * player during a game session.
  */
 public class CreateUserActivity extends AppCompatActivity {
     public static final String TAG = "CreateUserActivity";
@@ -39,6 +39,12 @@ public class CreateUserActivity extends AppCompatActivity {
         editTextUsername = (EditText) findViewById(R.id.createUserActivityEditTextUsername);
     }
 
+    /**
+     * Validates the username input from the user. The username cannot be empty or contain white
+     * spaces. After validation the username will be stored into the SharedPreferences.
+     *
+     * @param view EditText.
+     */
     public void setUsername(View view) {
         // Removing all whitespaces
         String strUsername = editTextUsername.getText().toString().replaceAll("\\s+", "");
@@ -49,8 +55,7 @@ public class CreateUserActivity extends AppCompatActivity {
             toast.show();
         } else { sharedPreferences.edit().putString(SharedPreferencesKey.USERNAME.name(), strUsername).commit();
             Log.d(TAG, "Username set to " + strUsername);
-            // TODO: Create HowToPlayActivity and start it instead of MainActivity
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, HowToPlayActivity.class);
             startActivity(intent);
         }
     }

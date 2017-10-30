@@ -55,6 +55,7 @@
             android:layout_marginBottom="@dimen/margin_regular"
             android:textColor="@color/textLight"
             android:textSize="@dimen/text_size_regular"
-            android:text="@string/activity_main_btn_how_to_play" />
+            android:text="@string/activity_main_btn_how_to_play"
+            android:onClick="goToHowToPlay"/>
     </RelativeLayout>
 </LinearLayout>

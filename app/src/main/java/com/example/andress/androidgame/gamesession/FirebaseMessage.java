@@ -1,28 +1,15 @@
 package com.example.andress.androidgame.gamesession;
 
-import android.support.annotation.Nullable;
-
 import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
  * Created by Andress on 1/10/17.
+ *
+ * Model for sending messages to Firebase. Holds the data of the player who is sending the message,
+ * a flag if the game over is true or false, the time left in the clients counter to keep the
+ * timers in sync and the index of the movement in the grid view to update keep the grid view in
+ * sync.
  */
-
-//@IgnoreExtraProperties
-//public class FirebaseMessage {
-//    // Types
-//    public static final String MOVEMENT = "movement";
-//
-//    public String type;
-//    public Movement movement;
-//
-//    public FirebaseMessage() {}
-//
-//    public FirebaseMessage(String type, Movement movement) {
-//        this.type = type;
-//        this.movement = movement;
-//    }
-//}
 
 @IgnoreExtraProperties
 public class FirebaseMessage {

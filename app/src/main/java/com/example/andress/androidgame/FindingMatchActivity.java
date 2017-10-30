@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ProgressBar;
 
 import com.example.andress.androidgame.gamesession.GameSession;
 import com.example.andress.androidgame.gamesession.Movement;
@@ -14,7 +13,6 @@ import com.example.andress.androidgame.settings.Difficulty;
 import com.example.andress.androidgame.settings.Pokemon;
 import com.example.andress.androidgame.storage.FirebaseKey;
 import com.example.andress.androidgame.storage.SharedPreferencesKey;
-import com.example.andress.androidgame.ui.kenvector.TextView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -144,8 +142,12 @@ public class FindingMatchActivity extends AppCompatActivity {
         });
     }
 
-    // Listens for a Guest when joins the created game session
-    // Starting game session activity as Owner
+    /**
+     * Listens for a Guest when joins the created game session.
+     * Starting game session activity as Owner.
+     *
+     * @param childId string with the id of the Firebase game session.
+     */
     private void waitForGuest(String childId) {
         listenForGuest = new ValueEventListener() {
             @Override
@@ -163,6 +165,10 @@ public class FindingMatchActivity extends AppCompatActivity {
         }; firebase.child(childId).addValueEventListener(listenForGuest);
     }
 
+    /**
+     * Starts the game session activity.
+     * @param gameSessionType Could be OWNER or GUEST
+     */
     private void goToGameSessionActivity(String gameSessionType) {
         Intent intent = new Intent(this, GameSessionActivity.class);
         switch (gameSessionType) {
@@ -191,6 +197,13 @@ public class FindingMatchActivity extends AppCompatActivity {
 
     // Generates 4 random movements for the initial Grid view setup for the Game session.
     // The first two movements will be marked as "owner" and the next two as "guest"
+
+    /**
+     * Generates 4 random movements for the initial Grid view setup for the Game session.
+     * The first two movements will be marked as "owner" and the next two as "guest".
+     *
+     * @return list with 4 unique movements.
+     */
     private List<Movement> getRandMovements() {
         int len = difficulty.cols() * difficulty.rows();
         Random random = new Random();

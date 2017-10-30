@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 
 /**
  * Created by Andress on 26/9/17.
+ *
+ * Custom Button with the Kenvector Future font.
  */
 
 public class Button extends AppCompatButton {

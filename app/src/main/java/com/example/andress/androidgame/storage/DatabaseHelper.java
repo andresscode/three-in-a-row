@@ -7,8 +7,9 @@ import android.util.Log;
 
 /**
  * Created by Andress on 27/9/17.
+ *
+ * This class creates and drops the SQLite database used for the Standings Activity.
  */
-
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TAG = "DatabaseHelper";
 

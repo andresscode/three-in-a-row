@@ -17,12 +17,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.andress.androidgame.gamesession.FirebaseMessage;
-import com.example.andress.androidgame.gamesession.GameSession;
 import com.example.andress.androidgame.gamesession.ImageAdapter;
-import com.example.andress.androidgame.gamesession.Movement;
 import com.example.andress.androidgame.settings.Difficulty;
 import com.example.andress.androidgame.settings.Pokemon;
 import com.example.andress.androidgame.storage.DatabaseHelper;
@@ -34,13 +31,31 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * This is the activity where the game session is played. This activity follows this process:
+ *
+ *    1. Get the game session id in Firebase and the type of session [OWNER or GUEST] from the
+ *    match settings activity intent to set the FirebaseMessage listeners to the game session
+ *    child.
+ *
+ *    2. Gets the Difficulty, Pokemon and Username from the SharedPreferences of the local client
+ *    to set up the layout and views.
+ *
+ *    3. Setups the HUDs and the counter of available movements.
+ *
+ *    4. Create the timers handlers.
+ *
+ *    5. Fetch the opponents username from Firebase and the initial movements to setup the
+ *    grid view.
+ *
+ *    6. Starts the listener to the Firebase server.
+ */
 public class GameSessionActivity extends AppCompatActivity {
     public static final String TAG = "GameSessionActivity";
+
     private static final String OWNER = "owner";
     private static final String GUEST = "guest";
     private static final String WIN = "win";
@@ -175,7 +190,9 @@ public class GameSessionActivity extends AppCompatActivity {
      * =============================================================================================
      */
 
-    // Getting the references of the views in the layout
+    /**
+     * Getting the references of the views in the layout
+     */
     private void getViewsFromLayout() {
         // HUD Top [local player]
         hudBarTop = (RelativeLayout) findViewById(R.id.gameSessionActivityHudBarTop);
@@ -193,7 +210,9 @@ public class GameSessionActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gameSessionActivityGridView);
     }
 
-    // Getting the gameSessionType and gameSessionId to match Firebase
+    /**
+     * Getting the gameSessionType and gameSessionId to match Firebase.
+     */
     private void getDataFromPreviousActivity() {
         Intent intent = getIntent();
         gameSessionId = intent.getStringExtra(FindingMatchActivity.FIREBASE_GAME_SESSION_ID);
@@ -202,8 +221,9 @@ public class GameSessionActivity extends AppCompatActivity {
         Log.d(TAG, "Game session type: " + gameSessionType);
     }
 
-
-    // Fetching local data [difficulty, username (local), pokemon (local)]
+    /**
+     * Fetching local data [difficulty, username (local), pokemon (local)]
+     */
     private void fetchLocalData() {
         sharedPreferences = getSharedPreferences(SharedPreferencesKey.FILE_NAME.name(), 0);
         difficulty = Difficulty.getByString(sharedPreferences.getString(SharedPreferencesKey.DIFFICULTY.name(), null));
@@ -216,7 +236,9 @@ public class GameSessionActivity extends AppCompatActivity {
         timeLeftOpponent = difficulty.time();
     }
 
-    // Initial turn [Owner always will start]
+    /**
+     * Initial turn [Owner always will start]
+     */
     private void setInitialTurn() {
         switch (gameSessionType) {
             case OWNER:
@@ -233,8 +255,9 @@ public class GameSessionActivity extends AppCompatActivity {
         Log.d(TAG, "myTurn: " + myTurn);
     }
 
-
-    // Changes the background and action text of the HUDs when the players changes turn
+    /**
+     * Changes the background and action text of the HUDs when the players changes turn.
+     */
     private void changeTurnHud() {
         if (myTurn) {
             hudBarTop.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.panel_blue_rounded, null));
@@ -249,7 +272,9 @@ public class GameSessionActivity extends AppCompatActivity {
         }
     }
 
-    // Create an initial grid view without tiles (for displaying purposes)
+    /**
+     * Create an initial grid view without tiles (for displaying purposes)
+     */
     private void setEmptyGridView() {
         gridViewArray = new Integer[difficulty.cols() * difficulty.rows()];
         for (int i = 0; i < gridViewArray.length; i++) {
@@ -273,7 +298,9 @@ public class GameSessionActivity extends AppCompatActivity {
         }
     }
 
-    // Setting UI possible from local storage [HudBarTop, HudBarBottomBackground and Timers]
+    /**
+     * Setting UI possible from local storage [HudBarTop, HudBarBottomBackground and Timers]
+     */
     private void setViewsFromLocalStorage() {
         changeTurnHud();
         hudTileTop.setBackground(ResourcesCompat.getDrawable(getResources(), pokemonLocal.tileGreenHud(), null));
@@ -283,58 +310,66 @@ public class GameSessionActivity extends AppCompatActivity {
         setEmptyGridView();
     }
 
-    // Setting timers tasks
+    /**
+     * Setting timers tasks
+     */
     private void setTimersTasks() {
         localTimerTask = new TimerTask() {
             @Override
             public void run() {
-//                if (timeLeftLocal == 0) {
-//                    gameOver = true;
-//                    stopLocalTimer();
-//                }
-                if (!gameOver && myTurn && gameHasStarted && movementsLeft > 0) {
-                    handler.obtainMessage().sendToTarget();
-                    timeLeftLocal--;
-                }
+            if (!gameOver && myTurn && gameHasStarted && movementsLeft > 0) {
+                handler.obtainMessage().sendToTarget();
+                timeLeftLocal--;
+            }
             }
         };
 
         opponentTimerTask = new TimerTask() {
             @Override
             public void run() {
-                if (!gameOver && !myTurn && gameHasStarted && movementsLeft > 0) {
-                    handler.obtainMessage().sendToTarget();
-                    timeLeftOpponent--;
-                }
+            if (!gameOver && !myTurn && gameHasStarted && movementsLeft > 0) {
+                handler.obtainMessage().sendToTarget();
+                timeLeftOpponent--;
+            }
             }
         };
     }
 
-    // Start timer
+    /**
+     * Start timer
+     */
     private void startLocalTimer() {
         localTimer = new Timer();
         localTimer.scheduleAtFixedRate(localTimerTask, 1000, 1000);
     }
 
-    // Stop timer
+    /**
+     * Stop timer
+     */
     private void stopLocalTimer() {
         if (localTimer !=  null)
             localTimer.cancel();
     }
 
-    // Start timer
+    /**
+     * Start timer
+     */
     private void starOpponentTimer() {
         opponentTimer = new Timer();
         opponentTimer.scheduleAtFixedRate(opponentTimerTask, 1000, 1000);
     }
 
-    // Stop timer
+    /**
+     * Stop timer
+     */
     private void stopOpponentTimer() {
         if (opponentTimer != null)
             opponentTimer.cancel();
     }
 
-    // Setting the URL reference to firebase/queue/{difficulty}/{gameSessionId}
+    /**
+     * Setting the URL reference to firebase/queue/{difficulty}/{gameSessionId}
+     */
     private void setFirebaseReference() {
         firebaseGameSessionRef = FirebaseDatabase
                 .getInstance()
@@ -345,8 +380,10 @@ public class GameSessionActivity extends AppCompatActivity {
         Log.d(TAG, firebaseGameSessionRef.toString());
     }
 
-    // This method will fetch the username and pokemon data of the opponent, the 4 initial random
-    // movements that must be added to the grid view and will update the UI for the local client.
+    /**
+     * This method will fetch the username and pokemon data of the opponent, the 4 initial random
+     * movements that must be added to the grid view and will update the UI for the local client.
+     */
     private void getInitialFirebaseData() {
         firebaseGameSessionRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -407,9 +444,11 @@ public class GameSessionActivity extends AppCompatActivity {
         });
     }
 
-    // This method initializes a constant event listener to the game session messages ["message"]
-    // child to sync the client with the Firebase server to keep both devices up to date with
-    // the data transfer.
+    /**
+     * This method initializes a constant event listener to the game session messages ["message"]
+     * child to sync the client with the Firebase server to keep both devices up to date with
+     * the data transfer.
+     */
     private void startListenToGameSessionMessages() {
         listenForMessage = new ValueEventListener() {
             @Override
@@ -451,10 +490,12 @@ public class GameSessionActivity extends AppCompatActivity {
         firebaseGameSessionRef.child("message").addValueEventListener(listenForMessage);
     }
 
-    // The client could click an item from the grid view when myTurn is true and the
-    // clientReady is true. Every click will trigger a message to the Firebase server
-    // to be listened by the opponent and also the UI updates needed like changing the HUDs
-    // colors, action texts and timers
+    /**
+     * The client could click an item from the grid view when myTurn is true and the
+     * clientReady is true. Every click will trigger a message to the Firebase server
+     * to be listened by the opponent and also the UI updates needed like changing the HUDs
+     * colors, action texts and timers
+     */
     private void setGridViewListener() {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -489,6 +530,14 @@ public class GameSessionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This algorithm check if there are three tiles in a row vertically or horizontally.
+     *
+     * @param array integers array of the grid view.
+     * @param index int with the index of the new tile placed to be verified.
+     * @param tile int with the id of the tile of the player.
+     * @return true if the movement is invalid, otherwise, false.F
+     */
     private boolean gameOverByInvalidMovement(Integer[] array, int index, int tile) {
         int size = array.length;
         int lastIndex = size - 1;
@@ -539,7 +588,11 @@ public class GameSessionActivity extends AppCompatActivity {
         return false;
     }
 
-    // Setting the Game Over panel
+    /**
+     * Setting the Game Over panel
+     *
+     * @param result string [WIN, LOSE, TIE]
+     */
     private void gameOverView(String result) {
         stopLocalTimer();
         stopOpponentTimer();
@@ -584,6 +637,11 @@ public class GameSessionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Saves the result into the SQLite database to be displayed in the standings activity.
+     *
+     * @param type string [WIN, LOSE, TIE]
+     */
     private void addRecordToDatabase(String type) {
         int currentTime = difficulty.time() - timeLeftLocal;
         String dif = difficulty.str();
@@ -607,6 +665,12 @@ public class GameSessionActivity extends AppCompatActivity {
         db.close();
     }
 
+    /**
+     * Checks if a given time is better than the previous best time.
+     *
+     * @param timeToCompare int actual time to be compared.
+     * @return true if the new time is better than the one in the database, otherwise, false.
+     */
     private boolean newBestTime(int timeToCompare) {
         SQLiteDatabase db = new DatabaseHelper(this).getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM standings WHERE difficulty = " + "\"" + difficulty.str() + "\";", null);

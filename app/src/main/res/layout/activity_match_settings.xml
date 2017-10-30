@@ -157,7 +157,6 @@
             android:textSize="@dimen/text_size_regular"
             android:layout_marginTop="@dimen/margin_regular"
             android:layout_marginBottom="@dimen/margin_regular"
-            android:layout_below="@+id/matchSettingsActivityHorizontalScrollViewPokemon"
-            android:onClick="goToFindingMatch"/>
+            android:layout_below="@+id/matchSettingsActivityHorizontalScrollViewPokemon" />
     </RelativeLayout>
 </LinearLayout>

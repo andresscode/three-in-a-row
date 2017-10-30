@@ -13,7 +13,7 @@ import com.example.andress.androidgame.storage.DatabaseHelper;
 import com.example.andress.androidgame.ui.kenvector.TextView;
 
 /**
- * This class shows the Standings saved from every game played by the user. Uses the SQLite
+ * This activity shows the Standings saved from every game played by the user. Uses the SQLite
  * database to retrieve the data of how many games has been won, loss, tied and, the fastest
  * time used to finish the game per difficulty (easy, normal and hard).
  */

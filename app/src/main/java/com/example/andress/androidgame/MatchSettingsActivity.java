@@ -12,21 +12,12 @@ import android.widget.RadioGroup;
 import com.example.andress.androidgame.settings.Difficulty;
 import com.example.andress.androidgame.settings.Pokemon;
 import com.example.andress.androidgame.storage.SharedPreferencesKey;
+import com.example.andress.androidgame.ui.kenvector.Button;
 
 /**
- * This activity will handle the match settings to be used for pre-select the difficulty and
- * pokemon radio buttons and, for the data that must be passed to the Firebase server to
- * find a match with the desired settings.
- *
- *  - Difficulty: this is handled by the Difficulty enum class. The activity layout must arrange
- *                the difficulties in the same order of the ids in the java enum and each radio
- *                radio button in the layout will have a text parameter (transparent) to be used
- *                as the id to match the view and the java enum.
- *
- *  - Pokemon: this is handled by the Pokemon enum class. The activity layout must arrange
- *             the pokemons in the same order of the ids in the java enum and each radio
- *             radio button in the layout will have a text parameter (transparent) to be used
- *             as the id to match the view and the java enum.
+ * This activity setups the difficulty and the pokemon that will be used by the user to find
+ * a new match. The difficulty and pokemon will be saved in the SharedPreferences to leave the
+ * last selection as the default difficulty and pokemon for the next match.
  */
 public class MatchSettingsActivity extends AppCompatActivity {
     public static final String TAG = "MatchSettingsActivity";
@@ -38,6 +29,7 @@ public class MatchSettingsActivity extends AppCompatActivity {
     private RadioGroup radioGroupDifficulty;
     private RadioGroup radioGroupPokemon;
     private RadioButton checkedPokemon;
+    private Button btnAccept;
 
     // Helper fields
     private String difficultyStr;
@@ -67,8 +59,21 @@ public class MatchSettingsActivity extends AppCompatActivity {
         radioGroupPokemon.check(pokemonId);
         checkedPokemon = (RadioButton) findViewById(pokemonId);
         checkedPokemon.getParent().requestChildFocus(checkedPokemon, checkedPokemon);
+
+        // Setting button
+        btnAccept = (Button) findViewById(R.id.matchSettingsActivityButtonAccept);
+        btnAccept.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                goToFindingMatch(view);
+            }
+        });
     }
 
+    /**
+     * Saves the difficulty and pokemon selected by the user into the SharedPreferences, then,
+     * starts the FindingMatchActivity.
+     * @param view Button
+     */
     public void goToFindingMatch(View view) {
         // Saving difficulty and pokemon preferences
         difficultyId = radioGroupDifficulty.getCheckedRadioButtonId();

@@ -2,13 +2,11 @@ package com.example.andress.androidgame;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.andress.androidgame.storage.DatabaseHelper;
 import com.example.andress.androidgame.storage.SharedPreferencesKey;
 
 /**
@@ -19,7 +17,7 @@ import com.example.andress.androidgame.storage.SharedPreferencesKey;
  * 2. Standings
  * 3. How to play
  *
- * This activity will check if the in the SharedPreferences if the app is being used for first
+ * This activity will check in the SharedPreferences if the app is being used for first
  * time to redirect the user to the user's creation activity, then, the How to play activity will
  * be shown to the user to explain how the game works.
  */
@@ -33,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Uncomment to reset SQLite data
 //        DatabaseHelper dbh = new DatabaseHelper(this);
 //        SQLiteDatabase db = dbh.getReadableDatabase();
 //        dbh.onUpgrade(db, 0, 1);
@@ -63,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed() {
-        // Do nothing
+    public void goToHowToPlay(View view) {
+        Intent intent = new Intent(this, HowToPlayActivity.class);
+        startActivity(intent);
     }
 }
