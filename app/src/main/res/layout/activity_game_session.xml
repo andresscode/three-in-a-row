@@ -117,8 +117,7 @@
             android:layout_marginLeft="@dimen/margin_regular"
             android:layout_toLeftOf="@+id/gameSessionActivityButtonSettings"
             android:layout_centerVertical="true"
-            android:background="@drawable/button_icon_restart_game"
-            android:onClick="goToFindMatch"/>
+            android:background="@drawable/button_icon_restart_game"/>
         <com.example.andress.androidgame.ui.kenvector.TextView
             android:id="@+id/gameSessionActivityTextViewGameOverResult"
             android:layout_width="wrap_content"
@@ -138,15 +137,13 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margin_regular"
             android:layout_marginRight="@dimen/margin_regular"
-            android:background="@drawable/button_icon_match_settings"
-            android:onClick="goToMatchSettings"/>
+            android:background="@drawable/button_icon_match_settings"/>
         <com.example.andress.androidgame.ui.kenvector.Button
             android:id="@+id/gameSessionActivityButtonMenu"
             android:layout_width="@dimen/radio_default_size"
             android:layout_height="@dimen/radio_default_size"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/button_icon_menu"
-            android:onClick="goToMainActivity"/>
+            android:background="@drawable/button_icon_menu"/>
     </RelativeLayout>
 </LinearLayout>

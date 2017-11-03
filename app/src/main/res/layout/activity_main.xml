@@ -31,8 +31,7 @@
             android:layout_marginBottom="@dimen/margin_regular"
             android:textColor="@color/textDark"
             android:textSize="@dimen/text_size_extra_big"
-            android:text="@string/activity_main_btn_find_match"
-            android:onClick="goToMatchSettings"/>
+            android:text="@string/activity_main_btn_find_match"/>
 
         <com.example.andress.androidgame.ui.kenvector.Button
             android:id="@+id/mainActivityBtnStandings"
@@ -42,8 +41,7 @@
             android:layout_below="@id/mainActivityBtnFindMatch"
             android:textColor="@color/textLight"
             android:textSize="@dimen/text_size_regular"
-            android:text="@string/activity_main_btn_standings"
-            android:onClick="goToStandings"/>
+            android:text="@string/activity_main_btn_standings"/>
 
         <com.example.andress.androidgame.ui.kenvector.Button
             android:id="@+id/mainActivityBtnHowToPlay"
@@ -55,7 +53,6 @@
             android:layout_marginBottom="@dimen/margin_regular"
             android:textColor="@color/textLight"
             android:textSize="@dimen/text_size_regular"
-            android:text="@string/activity_main_btn_how_to_play"
-            android:onClick="goToHowToPlay"/>
+            android:text="@string/activity_main_btn_how_to_play"/>
     </RelativeLayout>
 </LinearLayout>

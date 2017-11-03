@@ -43,7 +43,6 @@
             android:textColor="@color/textDark"
             android:textSize="@dimen/text_size_regular"
             android:layout_marginBottom="@dimen/margin_regular"
-            android:layout_below="@+id/createUserActivityEditTextUsername"
-            android:onClick="setUsername" />
+            android:layout_below="@+id/createUserActivityEditTextUsername"/>
     </RelativeLayout>
 </LinearLayout>

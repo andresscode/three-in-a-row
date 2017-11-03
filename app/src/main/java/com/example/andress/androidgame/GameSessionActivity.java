@@ -25,6 +25,7 @@ import com.example.andress.androidgame.settings.Pokemon;
 import com.example.andress.androidgame.storage.DatabaseHelper;
 import com.example.andress.androidgame.storage.FirebaseKey;
 import com.example.andress.androidgame.storage.SharedPreferencesKey;
+import com.example.andress.androidgame.ui.kenvector.Button;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -104,6 +105,11 @@ public class GameSessionActivity extends AppCompatActivity {
     // UI Game Over Panel
     private RelativeLayout gameOverPanel;
     private TextView gameOverTextViewResult;
+
+    // IU Game Over buttons
+    private Button btnPlayAgain;
+    private Button btnMatchSettings;
+    private Button btnMainMenu;
 
     // UI [HUD Top = local player]
     private RelativeLayout hudBarTop;
@@ -208,6 +214,10 @@ public class GameSessionActivity extends AppCompatActivity {
         hudTimerBottom = (TextView) findViewById(R.id.gameSessionActivityHudTimerBottom);
         // Grid view
         gridView = (GridView) findViewById(R.id.gameSessionActivityGridView);
+        // Game over buttons
+        btnPlayAgain = (Button) findViewById(R.id.gameSessionActivityButtonRestart);
+        btnMatchSettings = (Button) findViewById(R.id.gameSessionActivityButtonSettings);
+        btnMainMenu = (Button) findViewById(R.id.gameSessionActivityButtonMenu);
     }
 
     /**
@@ -594,6 +604,7 @@ public class GameSessionActivity extends AppCompatActivity {
      * @param result string [WIN, LOSE, TIE]
      */
     private void gameOverView(String result) {
+        setGameOverButtonsListeners();
         stopLocalTimer();
         stopOpponentTimer();
         Animation zoomOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_out);
@@ -704,6 +715,27 @@ public class GameSessionActivity extends AppCompatActivity {
     }
 
     // Game Over buttons navigations
+    private void setGameOverButtonsListeners() {
+        btnPlayAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToFindMatch(view);
+            }
+        });
+        btnMatchSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMatchSettings(view);
+            }
+        });
+        btnMainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToMainActivity(view);
+            }
+        });
+    }
+
     public void goToFindMatch(View view) {
         Intent intent = new Intent(this, FindingMatchActivity.class);
         startActivity(intent);

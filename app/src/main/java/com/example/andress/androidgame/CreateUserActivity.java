@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.andress.androidgame.storage.SharedPreferencesKey;
+import com.example.andress.androidgame.ui.kenvector.Button;
 
 /**
  * This activity creates the username into the SharedPreferences of the device to be used
@@ -26,10 +27,16 @@ public class CreateUserActivity extends AppCompatActivity {
     // UI
     private EditText editTextUsername;
 
+    // Buttons
+    private Button btnAccept;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
+
+        // Set button listeners
+        setButtonListeners();
 
         // Data
          sharedPreferences= getSharedPreferences(SharedPreferencesKey.FILE_NAME.name(), 0);
@@ -37,6 +44,16 @@ public class CreateUserActivity extends AppCompatActivity {
 
         // UI
         editTextUsername = (EditText) findViewById(R.id.createUserActivityEditTextUsername);
+    }
+
+    private void setButtonListeners() {
+        btnAccept = (Button) findViewById(R.id.createUserActivityBtnAccept);
+        btnAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setUsername(view);
+            }
+        });
     }
 
     /**
