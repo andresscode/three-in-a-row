@@ -1,7 +1,5 @@
 # 3Tiles
 
-# Summary
-
 This Android game is an Alpha version for testing purposes. 
 
 The game is a simple 2D online turned based game. 
