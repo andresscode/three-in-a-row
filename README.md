@@ -21,5 +21,5 @@ Any feedback is appreciated.
 # Credits
 
 - Roundicons Freebies from www.flaticon.com
-- Kenney from opengameart.org
+- Kenney from www.opengameart.org
 
