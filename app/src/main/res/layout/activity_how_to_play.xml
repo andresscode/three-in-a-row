@@ -6,9 +6,9 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="@dimen/activity_padding"
-    tools:context="com.example.andress.androidgame.HowToPlayActivity">
+    tools:context="com.andresscode.androidgame.HowToPlayActivity">
 
-    <com.example.andress.androidgame.ui.kenvector.TextView
+    <com.andresscode.androidgame.ui.kenvector.TextView
         android:id="@+id/howToPlayActivitySettingsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:background="@drawable/panel_grey_rounded_downside"
         android:layout_marginBottom="@dimen/margin_regular">
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityTextViewDifficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 android:enabled="false" />
         </RadioGroup>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityTextViewPokemon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"/>
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/howToPlayActivityButtonAccept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -177,13 +177,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityHudTileTop"
             android:layout_width="@dimen/radio_default_size"
             android:layout_height="@dimen/radio_default_size"
             android:background="@drawable/tile_green_pikachu_hud"/>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityHudUsernameTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
             android:layout_centerHorizontal="true"
             android:text="You"/>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityHudActionTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/activity_game_session_text_view_hud_action_wait"/>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityHudTimerTop"
             android:layout_width="@dimen/radio_default_size"
             android:layout_height="@dimen/radio_default_size"
@@ -249,7 +249,7 @@
             android:src="@drawable/help_player"
             android:layout_marginRight="@dimen/margin_regular"/>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/howToPlayActivityTextViewDialogue"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/grid_view_tile_normal"

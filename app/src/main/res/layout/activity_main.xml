@@ -6,9 +6,9 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="@dimen/activity_padding"
-    tools:context="com.example.andress.androidgame.MainActivity">
+    tools:context="com.andresscode.androidgame.MainActivity">
 
-    <com.example.andress.androidgame.ui.kenvector.TextView
+    <com.andresscode.androidgame.ui.kenvector.TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/panel_blue_rounded_upside"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/panel_grey_rounded_downside">
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/mainActivityBtnFindMatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:textSize="@dimen/text_size_extra_big"
             android:text="@string/activity_main_btn_find_match"/>
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/mainActivityBtnStandings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             android:textSize="@dimen/text_size_regular"
             android:text="@string/activity_main_btn_standings"/>
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/mainActivityBtnHowToPlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

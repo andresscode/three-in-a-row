@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157396092783:android:3b5a12995e98747c",
+        "mobilesdk_app_id": "1:157396092783:android:3e669b952ba6d17e",
         "android_client_info": {
-          "package_name": "com.example.andress.androidgame"
+          "package_name": "com.andresscode.androidgame"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "157396092783-3668ghbepmcm87u6cibnkn3i2esn08b4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.andress.androidgame",
-            "certificate_hash": "08cd4887b2721289f9bb6e510545fb71302d7882"
-          }
-        },
         {
           "client_id": "157396092783-j2onurd72v7pi7dsljklhiik8s4lsher.apps.googleusercontent.com",
           "client_type": 3
@@ -30,6 +22,9 @@
       "api_key": [
         {
           "current_key": "AIzaSyCgu149484ZnlLc9ViI94DzXYkvTkns5gE"
+        },
+        {
+          "current_key": "AIzaSyDhAPU5yKbuJH8sTVjcfUBQvav46VTZi3Q"
         }
       ],
       "services": {
@@ -37,13 +32,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "157396092783-j2onurd72v7pi7dsljklhiik8s4lsher.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

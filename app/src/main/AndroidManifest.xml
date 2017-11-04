@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.andress.androidgame">
+    package="com.andresscode.androidgame">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.andresscode.androidgame.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,21 +19,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateUserActivity"
+            android:name="com.andresscode.androidgame.CreateUserActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StandingsActivity"
+            android:name="com.andresscode.androidgame.StandingsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MatchSettingsActivity"
+            android:name="com.andresscode.androidgame.MatchSettingsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FindingMatchActivity"
+            android:name="com.andresscode.androidgame.FindingMatchActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".GameSessionActivity"
+            android:name="com.andresscode.androidgame.GameSessionActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".HowToPlayActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.andresscode.androidgame.HowToPlayActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

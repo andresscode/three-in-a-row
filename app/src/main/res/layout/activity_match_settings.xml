@@ -6,9 +6,9 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="@dimen/activity_padding"
-    tools:context="com.example.andress.androidgame.MatchSettingsActivity">
+    tools:context="com.andresscode.androidgame.MatchSettingsActivity">
 
-    <com.example.andress.androidgame.ui.kenvector.TextView
+    <com.andresscode.androidgame.ui.kenvector.TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/activity_match_settings_panel_title"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/panel_grey_rounded_downside">
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/matchSettingsActivityTextViewDifficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 android:button="@android:color/transparent"/>
         </RadioGroup>
 
-        <com.example.andress.androidgame.ui.kenvector.TextView
+        <com.andresscode.androidgame.ui.kenvector.TextView
             android:id="@+id/matchSettingsActivityTextViewPokemon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
             </RadioGroup>
         </HorizontalScrollView>
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/matchSettingsActivityButtonAccept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

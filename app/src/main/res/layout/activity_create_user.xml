@@ -6,9 +6,9 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="@dimen/activity_padding"
-    tools:context="com.example.andress.androidgame.CreateUserActivity">
+    tools:context="com.andresscode.androidgame.CreateUserActivity">
 
-    <com.example.andress.androidgame.ui.kenvector.TextView
+    <com.andresscode.androidgame.ui.kenvector.TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/activity_create_user_panel_title"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/panel_grey_rounded_downside">
 
-        <com.example.andress.androidgame.ui.kenvector.EditText
+        <com.andresscode.androidgame.ui.kenvector.EditText
             android:id="@+id/createUserActivityEditTextUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:maxLines="@integer/edit_text_max_lines"
             android:inputType="textPersonName" />
 
-        <com.example.andress.androidgame.ui.kenvector.Button
+        <com.andresscode.androidgame.ui.kenvector.Button
             android:id="@+id/createUserActivityBtnAccept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

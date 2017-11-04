@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.andress.androidgame.FindingMatchActivity">
+    tools:context="com.andresscode.androidgame.FindingMatchActivity">
 
-    <com.example.andress.androidgame.ui.kenvector.TextView
+    <com.andresscode.androidgame.ui.kenvector.TextView
         android:id="@+id/findingMatchActivityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
